@@ -1,12 +1,8 @@
 import os
 
 import streamlit as st
-<<<<<<< HEAD
 from streamlit_chat import message
 from langchain.chat_models import ChatOpenAI
-=======
-from langchain.llms import OpenAI
->>>>>>> d8a311a87230f62b109df79cc3989f795fab57c6
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
