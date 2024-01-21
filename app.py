@@ -2,7 +2,7 @@ import os
 
 import streamlit as st
 from streamlit_chat import message
-from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
@@ -18,7 +18,7 @@ for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
 
 db = FAISS.load_local("faiss_index", OpenAIEmbeddings())
-qa = RetrievalQA.from_chain_type(llm=OpenAI(), chain_type="stuff", retriever=db.as_retriever())
+qa = RetrievalQA.from_chain_type(llm=ChatOpenAI(), chain_type="stuff", retriever=db.as_retriever())
 
 if prompt := st.chat_input():
     st.session_state.messages.append({"role": "user", "content": prompt})
