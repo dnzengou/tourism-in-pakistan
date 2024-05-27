@@ -7,8 +7,8 @@ from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 
 
-st.title("Tourism in Pakistan 🇵🇰")
-st.subheader("Your travel guide for Pakistan!")
+st.title("Tourism in Rwanda 🇷🇼")
+st.subheader("Your travel guide for Rwanda!")
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
