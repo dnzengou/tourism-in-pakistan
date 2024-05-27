@@ -6,10 +6,12 @@ from langchain.embeddings import OpenAIEmbeddings
 
 def main():
     loader = WebBaseLoader([
-        "https://www.graana.com/blog/tourism-in-pakistan-tourist-attractions-challenges-and-potential/",
+        "https://visitrwanda.com/",
         "https://en.wikipedia.org/wiki/Tourism_in_Pakistan",
-        "https://traveltriangle.com/blog/places-to-visit-in-pakistan/",
-        "https://invest.gov.pk/tourism-and-hospitality"
+        "https://traveltriangle.com/blog/places-to-visit-in-rwanda/",
+        "https://www.investin-rwanda.com",
+        "https://rdb.rw/investment-opportunities/invest-in-tourism/",
+        "https://rdb.rw/rwandas-tourism-offerings-and-investment-opportunities-highlighted-at-iltm-asia-pacific-2023/"
         ])
     documents = loader.load()
     text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
